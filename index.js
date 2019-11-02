@@ -67,7 +67,8 @@ function processLength(list, callback) {
  * should return 'barbar'.
 */
 function processLastItem(stringList, callback) {
-  return callback(stringList.pop())
+  return callback(stringList.slice(-1).pop())
+
 }
 
 /**
@@ -158,7 +159,8 @@ function processContains(item, list, callback) {
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+ 
+  return callback(list.filter)
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -217,11 +219,10 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  return runners.filter(function(runner, tShirtSize) {
-       runner.name === runner.tShirtSize; 
-  });
+   return runners.filter(function(runner) { 
+     return runner.shirt_size == tShirtSize
+});
 }
-
 
 /**
  * ### Challenge `tallyUpDonations`
@@ -256,11 +257,14 @@ function tallyUpDonations(runners) {
 function counterMaker() {
   // BROKEN CODE STARTS
   const count = 0;
-  function counter() {
-    ++count
+  return function counter() {
+    ++count; 
   }
+ 
+
   // BROKEN CODE ENDS
 }
+
 
 /**
  * ### Challenge `counterMakerWithLimit`
