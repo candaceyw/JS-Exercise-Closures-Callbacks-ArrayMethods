@@ -111,9 +111,7 @@ function processSum(numberList, callback) {
  * should return 1000.
 */
 function processProduct(num1, num2, callback){
-   return callback (num1 + num2);
-   
-
+  return callback(num1 * num2);
 }
 
 /**
@@ -137,11 +135,7 @@ function processProduct(num1, num2, callback){
  * should return "sad".
 */
 function processContains(item, list, callback) {
-    // if(item is in list ){
-    //   return true;
-    // } else {
-    //   return false
-    // }
+    return callback(list.includes(item) )
 }
 
 /**
@@ -186,8 +180,10 @@ function processDuplicateFree(list, callback) {
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
-  const fullName = [];
-  return runners.forEach(fullName.push(`${runners.last_name} + ", " + ${runners.first_name}`));
+  const fullName= [];
+  runners.forEach(function(name){
+  fullName.push(name.last_name + ", " + name.first_name)});
+  return fullName;
 }
 
 /**
