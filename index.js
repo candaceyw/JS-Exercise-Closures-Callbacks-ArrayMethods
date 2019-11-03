@@ -212,6 +212,7 @@ function firstNamesAllCaps(runners) {
     return val.first_name.toUpperCase()})
 }
 
+
 /**
  * ### Challenge `getRunnersByTShirtSize`
  * 
@@ -291,9 +292,22 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
-}
+
+function counterMakerWithLimit(num) {
+  let count = 0;
+
+  let counter = () => {
+    if (count <= num){ 
+      return count++;
+      } else {
+           count = 0;
+          return count++;
+      }
+    }
+    return counter;
+  }
+
+
 
 
 /////////////// END OF CHALLENGE ///////////////
